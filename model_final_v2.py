@@ -25,7 +25,7 @@ train = pd.read_csv('./train.csv')
 test = pd.read_csv('./test.csv').apply(lambda x: x/255.0)
 X_train, y_train = train.ix[:,1:].apply(lambda x: x/255.0).as_matrix(), train.ix[:,0].as_matrix()
 X_test = test.as_matrix()
-print (X_train[0:15])
+print(X_train[0:15])
 
 print(X_train.shape[0],X_train.shape[1])
 # We need to rehape the data back into a 1x28x28 image
@@ -105,4 +105,4 @@ for i in range(200): # optimal is 40
 # model.fit(X_train, y_train, nb_epoch=10, batch_size=32, validation_split=0.1)
 
 dt = time() - t0
-print ('Used '+str(dt)+' seconds.')
+print('Used '+str(dt)+' seconds.')

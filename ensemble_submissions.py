@@ -12,9 +12,9 @@ for f in allFiles:
     df = pd.read_csv(csv_path + '/' + f,index_col=None)
     list_.append(df['Label'])
 alltest = pd.concat(list_, axis=1)
-#print (alltest)
+#print(alltest)
 new_result = alltest.mode(axis=1)[0].astype(int) # select only the first mode value, and convert to integer label
-#print (new_result)
+#print(new_result)
 d = {'ImageId': range(1,len(new_result)+1), 'Label':new_result} # create dataframe from dictionary
 new_submission = pd.DataFrame(d)
 new_submission.to_csv('./ensemble_result.csv', index=False, header=True)

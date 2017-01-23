@@ -58,7 +58,7 @@ train = pd.read_csv('./train.csv')
 test = pd.read_csv('./test.csv').apply(lambda x: x/255.0)
 X_train, y_train = train.ix[:,1:].apply(lambda x: x/255.0).as_matrix(), train.ix[:,0].as_matrix()
 X_test = test.as_matrix()
-print (X_train[0:15])
+print(X_train[0:15])
 print(X_train.shape[0],X_train.shape[1])
 
 # rehape the data into 1x28x28 image

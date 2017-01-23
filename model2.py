@@ -62,7 +62,7 @@ model.fit(X_train, y_train, nb_epoch=10, batch_size=32,validation_split=0.1, sho
 
 ## Evaluate the model on test data
 objective_score = model.evaluate(X_test, y_test, show_accuracy=True, batch_size=32)
-print objective_score
+print(objective_score)
 
 model.save_weights('weights.h5')
 
