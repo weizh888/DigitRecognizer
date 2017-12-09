@@ -25,7 +25,7 @@ X_test = test.as_matrix()
 print(X_train[0:15])
 
 print(X_train.shape[0],X_train.shape[1])
-# We need to rehape the data back into a 1x28x28 image.  
+# Rehape the data back into a 1x28x28 image  
 X_train = np.reshape(X_train, (X_train.shape[0], 1, 28, 28))
 X_test = np.reshape(X_test, (X_test.shape[0], 1, 28, 28))
 
@@ -66,7 +66,7 @@ model.add(Flatten())
 plot(model, to_file='model.png')
 
 model.add(Dropout(0.5))
-# Add a fully-connected layer.  
+# Add a fully-connected layer  
 model.add(Dense(output_dim=2048, activation="relu"))
 
 # Add another fully-connected layer with 10 neurons, one for each class.  
